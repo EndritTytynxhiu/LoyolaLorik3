@@ -1,0 +1,21 @@
+.lenda {
+    width: 100%;
+    text-align: center;
+}
+
+.zgjedhja {
+    width: 99.5%;
+    height: 500px;
+}
+
+.col-3 {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: solid black 2px;
+}
+
+.col-3:hover {
+    background-color: blanchedalmond;
+}

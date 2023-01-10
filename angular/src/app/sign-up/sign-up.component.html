@@ -1,0 +1,33 @@
+<div class="body">
+    <div class="foto">
+        <img src="assets/img/logo.png" alt="">
+    </div>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form>
+        <h3>regjistrimi</h3>
+
+
+        <label for="username">Emri</label>
+        <input type="text" placeholder="Sheno emrin tend" id="username" [(ngModel)]="FirstName">
+
+        <label for="username">Mbiemri</label>
+        <input type="text" placeholder="Sheno mbiemrin " id="password " [(ngModel)]="LastName ">
+
+        <label for="username">Email</label>
+        <input type="text" placeholder="Shenoni emailin tuaj" id="username" [(ngModel)]="Email">
+
+        <label for="password">Shenoni nje password </label>
+        <input type="password" placeholder="Krijoni nje password " id="username " [(ngModel)]="Password ">
+
+        <label for="username">Student id</label>
+        <input type="number" placeholder="Shenoni Student id tuja" id="username" [(ngModel)]="Student_id">
+
+        <label for="username">Student password</label>
+        <input type="text " placeholder="Shenoni student passwordin tuaj " id="username " [(ngModel)]="Student_password ">
+
+        <button (click)="signUp()">Vazhdoni</button>
+    </form>
+</div>
