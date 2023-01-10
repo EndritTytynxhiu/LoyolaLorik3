@@ -11,22 +11,22 @@
 
 
         <label for="username">Emri</label>
-        <input type="text" placeholder="Sheno emrin tend" id="username" [(ngModel)]="FirstName">
+        <input type="text" placeholder="Sheno emrin tend" id="username" [(ngModel)]="FirstName" [ngModelOptions]="{standalone: true}">
 
         <label for="username">Mbiemri</label>
-        <input type="text" placeholder="Sheno mbiemrin " id="password " [(ngModel)]="LastName ">
+        <input type="text" placeholder="Sheno mbiemrin " id="password " [(ngModel)]="LastName " [ngModelOptions]="{standalone: true}">
 
         <label for="username">Email</label>
-        <input type="text" placeholder="Shenoni emailin tuaj" id="username" [(ngModel)]="Email">
+        <input type="text" placeholder="Shenoni emailin tuaj" id="username" [(ngModel)]="Email" [ngModelOptions]="{standalone: true}">
 
         <label for="password">Shenoni nje password </label>
-        <input type="password" placeholder="Krijoni nje password " id="username " [(ngModel)]="Password ">
+        <input type="password" placeholder="Krijoni nje password " id="username " [(ngModel)]="Password " [ngModelOptions]="{standalone: true}">
 
         <label for="username">Student id</label>
-        <input type="number" placeholder="Shenoni Student id tuja" id="username" [(ngModel)]="Student_id">
+        <input type="number" placeholder="Shenoni Student id tuja" id="username" [(ngModel)]="Student_id" [ngModelOptions]="{standalone: true}">
 
         <label for="username">Student password</label>
-        <input type="text " placeholder="Shenoni student passwordin tuaj " id="username " [(ngModel)]="Student_password ">
+        <input type="text " placeholder="Shenoni student passwordin tuaj " id="username " [(ngModel)]="Student_password " [ngModelOptions]="{standalone: true}">
 
         <button (click)="signUp()">Vazhdoni</button>
     </form>
