@@ -2,6 +2,6 @@
     <tr *ngFor="let testet of test.data; let i = index">
         <th>{{i+1}}. {{testet.Emri}}</th>
         <th> Nota {{testet.Nota}}</th>
-        <th> Ndrysho</th>
+        <th (click)="openPopup(testet.id, i)"> Ndrysho</th>
     </tr>
 </table>

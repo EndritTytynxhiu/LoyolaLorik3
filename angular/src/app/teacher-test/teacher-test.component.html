@@ -2,6 +2,6 @@
     <tr *ngFor="let klasat of testi.data; let i = index">
         <th>{{i+1}}. {{klasat.Name}}</th>
         <th>Periudha {{klasat.Periudha}}</th>
-        <th (click)="UpdateTest(klasat.id)">Ndrysho</th>
+        <button (click)="UpdateTest(klasat.id)">Ndrysho</button>
     </tr>
 </table>
