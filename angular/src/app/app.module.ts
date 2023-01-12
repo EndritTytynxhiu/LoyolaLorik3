@@ -16,6 +16,10 @@ import { ClassService } from './service/class.service';
 import { TeacherTestComponent } from './teacher-test/teacher-test.component';
 import { TestInfoService } from './service/test-info.service';
 import { TestInfoUpdateComponent } from './test-info-update/test-info-update.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCommonModule } from '@angular/material/core';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { UpdateDialogComponentComponent } from './update-dialog-component/update-dialog-component.component';
 
 @NgModule({
   declarations: [
@@ -26,15 +30,19 @@ import { TestInfoUpdateComponent } from './test-info-update/test-info-update.com
     TestetNxansComponent,
     TeacherClassComponent,
     TeacherTestComponent,
-    TestInfoUpdateComponent
+    TestInfoUpdateComponent,
+    UpdateDialogComponentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatCommonModule,
+    MatDialogModule
   ],
-  providers: [UserService, TestService, ClassService, TestInfoService],
+  providers: [UserService, TestService, ClassService, TestInfoService, ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

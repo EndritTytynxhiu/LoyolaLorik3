@@ -17,7 +17,7 @@ export class SignUpComponent {
   data:any
 
   constructor(private user:UserService,
-    private router:Router){}
+    private router:Router,){}
 
   signUp(){
     console.log({FirstName:this.FirstName, LastName:this.LastName, Email:this.Email, password:this.Password, Student_id:this.Student_id,Student_password:this.Student_password});
@@ -34,5 +34,7 @@ export class SignUpComponent {
       }
     })
   }
+
+  
 }
     

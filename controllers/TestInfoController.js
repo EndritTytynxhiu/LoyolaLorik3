@@ -23,10 +23,29 @@ const getTestInfo = (req, res) => {
             res.json({ error: err })
         })
     }
-
-
-
-
 }
 
-module.exports = { getTestInfo }
+const updateTestInfo = (req, res) => {
+    let Nota = req.body.Nota
+    console.log(typeof(Nota));
+    let error = []
+    if (Nota == 0 && !Nota) {
+        error.push("Nuk ka note")
+    }
+
+    if (Nota < 1 && Nota > 5) {
+        res.json({ error: "Nota nuk ekziston" })
+    } else {
+        models.TestInfo.update({ Nota: Nota }, {
+            where: {
+                id: req.body.id
+            }
+        }).catch((err) => {
+            res.json({ error: "Nota nuk ekziston" })
+        }).then((rest) => {
+            res.json({ succes: "Succes" })
+        })
+    }
+}
+
+module.exports = { getTestInfo, updateTestInfo }

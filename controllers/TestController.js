@@ -19,16 +19,16 @@ const getTestByUserId = (req, res) => {
     if (error.length >= 1) {
         res.json({ error: error })
     } else {
-        models.User.findOne({
+        models.User.findAll({
             where: { id: User_id }
         }).then(result => {
             if (result) {
-                models.Subject.findOne({
+                models.Subject.findAll({
                     where: { Name: landa }
                 }).then(result2 => {
                     if (result2) {
-                        sequelize.query(`Select test.Name, test.Periudha, test_info.Nota From users INNER JOIN students ON users.Student_id = students.id INNER JOIN test_info ON students.id = test_info.student_id INNER JOIN test ON test_info.test_id = test.id INNER JOIN subject ON test.Subject = subject.id WHERE subject.Name="${landa}" AND users.id = ${User_id}`).then(result => {
-                            res.json({ data: result[0] })
+                        sequelize.query(`Select test.Name, test.Periudha, test_info.Nota From users INNER JOIN students ON users.Student_id = students.id INNER JOIN test_info ON students.id = test_info.student_id INNER JOIN test ON test_info.test_id = test.id INNER JOIN subject ON test.Subject = subject.id WHERE subject.Name="${landa}" AND users.id = ${User_id}`).then(result3 => {
+                            res.json({ data: result3[0] })
                         })
                     } else {
                         res.json({ error: "Lenda e gabuar" })

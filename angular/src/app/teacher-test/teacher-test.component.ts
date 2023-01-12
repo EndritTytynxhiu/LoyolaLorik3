@@ -15,6 +15,7 @@ export class TeacherTestComponent {
   decode:any
   class:any=localStorage.getItem('Class_id')
   testi:any
+  Nota:any
   ngOnInit(): void {
     this.decode = jwt_decode(this.token, )
     console.log(this.decode.result);
