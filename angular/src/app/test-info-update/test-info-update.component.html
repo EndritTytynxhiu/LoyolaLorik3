@@ -9,28 +9,28 @@
 
 <div class="html">
     <div class="body">
-<div class="container">
-    <table>
-        <thead>
-            <tr >
-                <th>Emri nx</th>
-                <th>Nota</th>
-                <th>Editimi</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let testet of test.data; let i = index"> 
-                <td>{{i+1}}. {{testet.Emri}}</td>
-                <td>{{testet.Nota}}</td>
-                <td> Ndrysho</td>
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Emri nx</th>
+                        <th>Nota</th>
+                        <th>Editimi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let testet of test.data; let i = index">
+                        <td>{{i+1}}. {{testet.Emri}}</td>
+                        <td>{{testet.Nota}}</td>
+                        <td (click)="openPopup(testet.id, i)"> Ndrysho</td>
 
 
-            </tr>
-          
+                    </tr>
 
-            
-        </tbody>
-    </table>
-</div>
-</div>
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
