@@ -1,7 +1,36 @@
-<table>
+<!-- <table>
     <tr *ngFor="let testet of test.data; let i = index">
         <th>{{i+1}}. {{testet.Emri}}</th>
         <th> Nota {{testet.Nota}}</th>
         <th> Ndrysho</th>
     </tr>
-</table>
+</table>  -->
+
+
+<div class="html">
+    <div class="body">
+<div class="container">
+    <table>
+        <thead>
+            <tr >
+                <th>Emri nx</th>
+                <th>Nota</th>
+                <th>Editimi</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let testet of test.data; let i = index"> 
+                <td>{{i+1}}. {{testet.Emri}}</td>
+                <td>{{testet.Nota}}</td>
+                <td> Ndrysho</td>
+
+
+            </tr>
+          
+
+            
+        </tbody>
+    </table>
+</div>
+</div>
+</div>

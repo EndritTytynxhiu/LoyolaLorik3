@@ -1,3 +1,10 @@
+
+.body{
+    background-image: linear-gradient(to right,#43cea2 , #185a9d);
+     height: 100vh;
+}
+
+
 .lenda {
     width: 100%;
     text-align: center;
@@ -6,6 +13,7 @@
 .zgjedhja {
     width: 99.5%;
     height: 500px;
+ 
 }
 
 .col-3 {
@@ -13,9 +21,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: solid black 2px;
+    border: dashed #43cea2 1px;
+    background-image: linear-gradient(#ffafbd,#ffc3a0);
 }
 
-.col-3:hover {
-    background-color: blanchedalmond;
+.col-3:hover{
+
+    background-image: linear-gradient(lightblue,lightyellow);
 }
