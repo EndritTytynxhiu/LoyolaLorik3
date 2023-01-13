@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCommonModule } from '@angular/material/core';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { UpdateDialogComponentComponent } from './update-dialog-component/update-dialog-component.component';
+import { UpdateTestDialogComponent } from './update-test-dialog/update-test-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { UpdateDialogComponentComponent } from './update-dialog-component/update
     TeacherTestComponent,
     TestInfoUpdateComponent,
     UpdateDialogComponentComponent,
+    UpdateTestDialogComponent,
   ],
   imports: [
     BrowserModule,

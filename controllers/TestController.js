@@ -39,10 +39,6 @@ const getTestByUserId = (req, res) => {
             }
         })
     }
-
-
-
-
 }
 
 const getTestTeacher = (req, res) => {
@@ -86,4 +82,36 @@ const getTestTeacher = (req, res) => {
     }
 }
 
-module.exports = { getTestByUserId, getTestTeacher }
+const updateTest = (req, res) => {
+    let Name = req.body.Name
+    let Periudha = +req.body.Periudha
+    console.log(Periudha);
+
+    console.log(typeof(Name));
+    let error = []
+    if (Name == "" && !Name) {
+        error.push("Emri nuk munde te jete i zbrazet")
+    }
+    if (Periudha == 0 && !Periudha) {
+        error.push("Periudha nuk duhet te jet ee zbrazet")
+    }
+    if (typeof(Periudha) != "number") {
+        error.push("Periudha duhet te jete vetem numer")
+    }
+
+    if (error.length >= 1) {
+        res.json({ error: error })
+    } else {
+        models.Test.update({ Name: Name, Periudha: Periudha }, {
+            where: {
+                id: req.body.id
+            }
+        }).catch((err) => {
+            res.json({ error: err })
+        }).then((rest) => {
+            res.json({ succes: "Succes" })
+        })
+    }
+}
+
+module.exports = { getTestByUserId, getTestTeacher, updateTest }

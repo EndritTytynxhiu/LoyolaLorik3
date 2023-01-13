@@ -60,9 +60,10 @@ export class TestInfoUpdateComponent implements OnInit {
           console.log('test');
           this.test.data[index].Nota = this.Notat
         }})
-      
-      
     })
-    
+  }
+
+  delete(id:number){
+
   }
 }
