@@ -16,27 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `class`
+-- Table structure for table `subject`
 --
 
-DROP TABLE IF EXISTS `class`;
+DROP TABLE IF EXISTS `subject`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `class` (
+CREATE TABLE `subject` (
   `id` int NOT NULL,
-  `Name` varchar(255) NOT NULL,
+  `Name` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `class`
+-- Dumping data for table `subject`
 --
 
-LOCK TABLES `class` WRITE;
-/*!40000 ALTER TABLE `class` DISABLE KEYS */;
-INSERT INTO `class` VALUES (1,'11A'),(2,'11B'),(3,'11C');
-/*!40000 ALTER TABLE `class` ENABLE KEYS */;
+LOCK TABLES `subject` WRITE;
+/*!40000 ALTER TABLE `subject` DISABLE KEYS */;
+INSERT INTO `subject` VALUES (1,'Gjuhe Shqipe'),(2,'Gjuhe gjermane'),(3,'Gjuhe angleze'),(4,'Gjuhe latine'),(5,'Matematike'),(6,'Fizik'),(7,'Kimi'),(8,'Biologji'),(9,'Ekonomi'),(10,'Gjeografi'),(11,'Art'),(12,'Muzik');
+/*!40000 ALTER TABLE `subject` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-10 14:20:59
+-- Dump completed on 2023-01-14  0:11:54

@@ -35,7 +35,7 @@ CREATE TABLE `users` (
   KEY `roles_idx` (`Role_id`),
   CONSTRAINT `roles` FOREIGN KEY (`Role_id`) REFERENCES `roles` (`id`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`Student_id`) REFERENCES `students` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'test','test','test@gmail.com','test1234',1,1),(2,'arber','bytyqi','arber@gmail.com','test1234',2,NULL),(4,'Edis','Galushi','edis@gmail.com','password',2,NULL),(5,'Maksut','Pirku','maksi@gmail.com','pass',2,NULL),(6,'test3','test3','test@gmail.com','test1234',1,2),(7,'test3','test3','test@gmail.com','test1234',1,2),(8,'test3','test3','test@gmail.com','test1234',1,2),(9,'test3','test3','test@gmail.com','test1234',1,2),(10,'test3','test3','test@gmail.com','test1234',1,2),(16,'test3','test3','test@gmail.com','test1234',1,2),(18,'test3','test3','test@gmail.com','test1234',1,2),(19,'test3','test3','test@gmail.com','test1234',1,2),(21,'test3','test3','test@gmail.com','test1234',1,2),(22,'test3','test3','test@gmail.com','test1234',1,2),(23,'test3','test3','test@gmail.com','test1234',1,2),(24,'test3','test3','test@gmail.com','test1234',1,2),(25,'test3','test3','test@gmail.com','test1234',1,2),(26,'test3','test3','test@gmail.com','test1234',1,2),(27,'test3','test3','test@gmail.com','test1234',1,2),(28,'test3','test3','test@gmail.com','test1234',1,2),(29,'test3','test3','test6@gmail.com','test',1,2),(30,'test3','test3','test7@gmail.com','tnxninx',1,2),(31,'endrit122005@gmail.com','Tytynxhiu','endrit122005sosmo@gmail.com','12345678',1,2),(32,'endrit','Tytynxhiu','endrit122005@gmail.comdbusb','12345678',1,2),(33,'endrit','Tytynxhiu','endiniufenoiaosinaoi','12354687',1,2),(34,'endrit','Tytynxhiu','nisdannsdina\\ol','12345678',1,2),(35,'Endrit','Tytynxhiu','tendrit@gmail.com','12345678',1,1),(36,'Zana','Kume Tytynxhiu','zana@gmail.com','12345678',1,2);
+INSERT INTO `users` VALUES (1,'test','test','test@gmail.com','test1234',1,1),(2,'arber','bytyqi','arber@gmail.com','test1234',2,NULL),(4,'Edis','Galushi','edis@gmail.com','password',2,NULL),(5,'Maksut','Pirku','maksi@gmail.com','pass',2,NULL),(6,'test3','test3','test@gmail.com','test1234',1,2),(7,'test3','test3','test@gmail.com','test1234',1,2),(8,'test3','test3','test@gmail.com','test1234',1,2),(9,'test3','test3','test@gmail.com','test1234',1,2),(10,'test3','test3','test@gmail.com','test1234',1,2),(16,'test3','test3','test@gmail.com','test1234',1,2),(18,'test3','test3','test@gmail.com','test1234',1,2),(19,'test3','test3','test@gmail.com','test1234',1,2),(21,'test3','test3','test@gmail.com','test1234',1,2),(22,'test3','test3','test@gmail.com','test1234',1,2),(23,'test3','test3','test@gmail.com','test1234',1,2),(24,'test3','test3','test@gmail.com','test1234',1,2),(25,'test3','test3','test@gmail.com','test1234',1,2),(26,'test3','test3','test@gmail.com','test1234',1,2),(27,'test3','test3','test@gmail.com','test1234',1,2),(28,'test3','test3','test@gmail.com','test1234',1,2),(29,'test3','test3','test6@gmail.com','test',1,2),(30,'test3','test3','test7@gmail.com','tnxninx',1,2),(31,'endrit122005@gmail.com','Tytynxhiu','endrit122005sosmo@gmail.com','12345678',1,2),(32,'endrit','Tytynxhiu','endrit122005@gmail.comdbusb','12345678',1,2),(33,'endrit','Tytynxhiu','endiniufenoiaosinaoi','12354687',1,2),(34,'endrit','Tytynxhiu','nisdannsdina\\ol','12345678',1,2),(35,'Endrit','Tytynxhiu','tendrit@gmail.com','12345678',1,1),(36,'Zana','Kume Tytynxhiu','zana@gmail.com','12345678',1,2),(37,'Endrit','Tytynxhiu','tendritt@gmail.com','12345678',1,2),(38,'Valton','Tytynxhiu','valton@gmail.com','12345678',1,2),(39,'Endirt','Tytynxhiu','endrit122005@gmail.com','12345678',1,2),(40,'endrit','tytynxhiu','eondoi','12345678',1,2),(41,'Endrit','Tytynxhiu','endoib','r nvcpot',1,2),(42,'Endrit','Tytynxhiu','fnovp','12345678',1,2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-10 14:20:59
+-- Dump completed on 2023-01-14  0:11:54

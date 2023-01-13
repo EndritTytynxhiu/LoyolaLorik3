@@ -16,36 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `test`
+-- Table structure for table `test_info`
 --
 
-DROP TABLE IF EXISTS `test`;
+DROP TABLE IF EXISTS `test_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `test` (
-  `id` int NOT NULL,
-  `Name` varchar(255) NOT NULL,
-  `Periudha` int NOT NULL,
-  `Subject` int NOT NULL,
-  `Class_id` int DEFAULT NULL,
-  `User_id` int DEFAULT NULL,
+CREATE TABLE `test_info` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `test_id` int NOT NULL,
+  `student_id` int NOT NULL,
+  `Nota` int DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `MFOI_idx` (`Subject`),
-  KEY `MF02_idx` (`Class_id`),
-  KEY `bdi_idx` (`User_id`),
-  CONSTRAINT `bdi` FOREIGN KEY (`User_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `MFOI` FOREIGN KEY (`Subject`) REFERENCES `subject` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  KEY `student_id` (`student_id`),
+  KEY `test_id` (`test_id`),
+  CONSTRAINT `test_info_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`),
+  CONSTRAINT `test_info_ibfk_2` FOREIGN KEY (`test_id`) REFERENCES `test` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=101 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `test`
+-- Dumping data for table `test_info`
 --
 
-LOCK TABLES `test` WRITE;
-/*!40000 ALTER TABLE `test` DISABLE KEYS */;
-INSERT INTO `test` VALUES (1,'Testi i madh',1,3,1,2),(2,'Testi i vogel',1,3,1,2),(3,'Testi i vogel ',1,9,1,4);
-/*!40000 ALTER TABLE `test` ENABLE KEYS */;
+LOCK TABLES `test_info` WRITE;
+/*!40000 ALTER TABLE `test_info` DISABLE KEYS */;
+INSERT INTO `test_info` VALUES (1,1,1,4),(2,1,2,5),(3,1,3,3),(4,1,4,5),(5,2,1,4),(6,2,2,3),(7,2,3,5),(8,2,4,5),(9,3,1,5),(10,3,2,3),(11,3,3,4),(12,3,4,5),(97,25,2,5),(98,25,1,5),(99,25,3,5),(100,25,4,5);
+/*!40000 ALTER TABLE `test_info` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-10 14:20:59
+-- Dump completed on 2023-01-14  0:11:54

@@ -16,32 +16,26 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `students`
+-- Table structure for table `role`
 --
 
-DROP TABLE IF EXISTS `students`;
+DROP TABLE IF EXISTS `role`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `students` (
+CREATE TABLE `role` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `FirstName` varchar(255) NOT NULL,
-  `LastName` varchar(255) NOT NULL,
-  `BirthDate` varchar(255) NOT NULL,
-  `Phonenumber` varchar(255) NOT NULL,
-  `Email` varchar(255) NOT NULL,
-  `Password` varchar(255) NOT NULL,
+  `Name` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `students`
+-- Dumping data for table `role`
 --
 
-LOCK TABLES `students` WRITE;
-/*!40000 ALTER TABLE `students` DISABLE KEYS */;
-INSERT INTO `students` VALUES (1,'test','test','01/01/2005','+3831112222','test@gmail.com','password'),(2,'Endrit','Tytynxhiu','07/12/2005','+38345247878','endrit122005@gmail.com','password'),(3,'Lorik','Pista','01/01/2006','+38344222111','pistalorik@gmail.com','password'),(4,'Mendor','Xhara','01/02/2005','+38344123123','mendorxhara@gmail.com','password'),(5,'Andi','Jahaj','02/03/2006','+38344321321','andijahaj@gmail.com','password'),(6,'Ajdin','Krasniqi','03/01/2006','+38344123456','ajdin@gmail.com','password');
-/*!40000 ALTER TABLE `students` ENABLE KEYS */;
+LOCK TABLES `role` WRITE;
+/*!40000 ALTER TABLE `role` DISABLE KEYS */;
+/*!40000 ALTER TABLE `role` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +47,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-10 14:20:59
+-- Dump completed on 2023-01-14  0:11:53

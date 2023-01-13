@@ -16,30 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `classinfo`
+-- Table structure for table `testinfo`
 --
 
-DROP TABLE IF EXISTS `classinfo`;
+DROP TABLE IF EXISTS `testinfo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `classinfo` (
-  `Id` int NOT NULL,
-  `Class_id` int NOT NULL,
-  `Students_id` int NOT NULL,
-  PRIMARY KEY (`Id`),
-  KEY `Class_id` (`Class_id`),
-  CONSTRAINT `classinfo_ibfk_1` FOREIGN KEY (`Class_id`) REFERENCES `class` (`id`)
+CREATE TABLE `testinfo` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `test_id` int NOT NULL,
+  `student_id` int DEFAULT NULL,
+  `Nota` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `classinfo`
+-- Dumping data for table `testinfo`
 --
 
-LOCK TABLES `classinfo` WRITE;
-/*!40000 ALTER TABLE `classinfo` DISABLE KEYS */;
-INSERT INTO `classinfo` VALUES (1,1,1),(2,2,2),(3,3,3),(4,2,4);
-/*!40000 ALTER TABLE `classinfo` ENABLE KEYS */;
+LOCK TABLES `testinfo` WRITE;
+/*!40000 ALTER TABLE `testinfo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `testinfo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-10 14:20:59
+-- Dump completed on 2023-01-14  0:11:53

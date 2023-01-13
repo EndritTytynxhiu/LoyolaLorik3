@@ -16,33 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `classteacherinfo`
+-- Table structure for table `class`
 --
 
-DROP TABLE IF EXISTS `classteacherinfo`;
+DROP TABLE IF EXISTS `class`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `classteacherinfo` (
-  `Class_id` int NOT NULL,
-  `Teacher_id` int NOT NULL,
-  `Subject_id` int NOT NULL,
-  KEY `Class_id` (`Class_id`),
-  KEY `classteacherinfo_ibfk_2_idx` (`Subject_id`),
-  KEY `bnck_idx` (`Teacher_id`),
-  CONSTRAINT `bnck` FOREIGN KEY (`Teacher_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `classteacherinfo_ibfk_1` FOREIGN KEY (`Class_id`) REFERENCES `class` (`id`),
-  CONSTRAINT `kv` FOREIGN KEY (`Subject_id`) REFERENCES `subject` (`id`)
+CREATE TABLE `class` (
+  `id` int NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `classteacherinfo`
+-- Dumping data for table `class`
 --
 
-LOCK TABLES `classteacherinfo` WRITE;
-/*!40000 ALTER TABLE `classteacherinfo` DISABLE KEYS */;
-INSERT INTO `classteacherinfo` VALUES (1,2,3),(2,4,9),(1,4,9),(3,4,9),(2,2,3),(3,2,3),(1,5,10),(2,5,10),(3,5,10);
-/*!40000 ALTER TABLE `classteacherinfo` ENABLE KEYS */;
+LOCK TABLES `class` WRITE;
+/*!40000 ALTER TABLE `class` DISABLE KEYS */;
+INSERT INTO `class` VALUES (1,'11A'),(2,'11B'),(3,'11C');
+/*!40000 ALTER TABLE `class` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-10 14:20:59
+-- Dump completed on 2023-01-14  0:11:54
