@@ -26,8 +26,8 @@ export class SignUpComponent {
       console.log(data);
       this.data = data
       if(this.data.succes == "Succesfull"){
-        localStorage.setItem("token",this.data.token)
-        this.router.navigate(["lendet"])
+        localStorage.setItem('token', this.data.token)
+        this.router.navigate(['lendet']);
       }else{
         console.log(this.data.error);
         alert(this.data.error)

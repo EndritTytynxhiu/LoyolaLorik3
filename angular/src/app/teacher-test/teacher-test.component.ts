@@ -38,8 +38,19 @@ export class TeacherTestComponent {
     this.router.navigate(["updateTest"])
   }
 
-  Delete(id:any){
+  Delete(id:number, index:any){
     console.log(id);
+    
+    this.test.deleteTest(id).subscribe((data)=>{
+      console.log(data);
+      this.Data = data
+      console.log(this.Data);
+      
+      if (this.Data.sucess == 'Sucess') {
+        this.testi.data.splice(index, 1)
+      } else {
+        alert(this.Data.error)
+      }})
   }
 
   Update(id:any, index:any){
@@ -56,6 +67,30 @@ export class TeacherTestComponent {
         if (this.Data.succes == 'Succes') {
           this.testi.data[index].Name = res.name
           this.testi.data[index].Periudha = res.periudha
+        } else {
+          alert(this.Data.error)
+        }
+      })})
+  }
+
+  Create(){
+    let dialogRef = this.dialog.open(UpdateTestDialogComponent, {
+      width:'250px',
+      height:'25%',
+    })
+
+    dialogRef.afterClosed().subscribe(res => {
+      console.log(res);
+      console.log({User_id:this.decode.result.id, Class_id:this.class, name:res.name, periudha:res.periudha});
+      this.test.createTest({User_id:this.decode.result.id, Class_id:this.class, name:res.name, periudha:res.periudha}).subscribe((data)=>{
+        this.Data = data
+        if (this.Data.succes == 'Succes') {
+          console.log(this.Data);
+          localStorage.setItem('test_id',this.Data.resp.id)
+          console.log(localStorage.getItem('test_id'));
+          this.router.navigate(['createTest'])
+        } else {
+          alert(this.Data.error)
         }
       })})
   }

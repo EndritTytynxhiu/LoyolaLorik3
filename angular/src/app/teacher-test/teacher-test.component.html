@@ -4,6 +4,7 @@
         <th>Periudha {{klasat.Periudha}}</th>
         <th (click)="UpdateTest(klasat.id)">Me shume te dhena ndaj Testit</th>
         <th (click)="Update(klasat.id, i)">Update</th>
-        <th>Delete</th>
+        <th (click)="Delete(klasat.id, i)">Delete</th>
     </tr>
 </table>
+<button (click)="Create()">Create</button>

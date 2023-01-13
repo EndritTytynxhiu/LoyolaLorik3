@@ -33,9 +33,7 @@ const updateTestInfo = (req, res) => {
         error.push("Nuk ka note")
     }
 
-    if (Nota < 1 && Nota > 5) {
-        res.json({ error: "Nota nuk ekziston" })
-    } else {
+    if (Nota >= 1 && Nota <= 5) {
         models.TestInfo.update({ Nota: Nota }, {
             where: {
                 id: req.body.id
@@ -45,7 +43,48 @@ const updateTestInfo = (req, res) => {
         }).then((rest) => {
             res.json({ succes: "Succes" })
         })
+    } else {
+        res.json("Nota nuk ekziston")
     }
 }
 
-module.exports = { getTestInfo, updateTestInfo }
+const createTestInfo = (req, res) => {
+    let test_id = +req.body.id
+    let student_idarr = req.body.studentarr
+    let Nota_arr = req.body.Nota_arr
+    let Nota = []
+    error = []
+
+    for (i of student_idarr) {
+        console.log(i);
+        models.Student.findOne({ where: { id: i } }).then((data) => {
+            if (!data) {
+                error.push("Studenti nuk ekziston")
+            }
+        })
+    }
+    for (i in Nota_arr) {
+        Nota_arr[i] = +Nota_arr[i]
+        Nota.push(Nota_arr[i])
+        if (Nota_arr[i] < 0 || Nota_arr[i] > 5) {
+            error.push(`Nota e ${i} nuk ekziston`)
+        }
+    }
+
+    if (error.length >= 1) {
+        res.json({ error: error, succes: "Failed" })
+    } else {
+        for (i in student_idarr) {
+            models.TestInfo.create({ test_id: test_id, student_id: student_idarr[i], Nota: Nota[i] }).catch((err) => {
+                error.push(err)
+            })
+        }
+        if (error.length >= 1) {
+            res.json({ error: error })
+        } else {
+            res.json({ sucess: "Succes" })
+        }
+    }
+}
+
+module.exports = { getTestInfo, updateTestInfo, createTestInfo }

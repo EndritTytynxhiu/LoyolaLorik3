@@ -1,0 +1,6 @@
+<table>
+    <tr *ngFor="let nxansat of students.data; let i = index">
+        <th>{{i+1}}. {{nxansat.emri}}</th>
+        <th>Nota <input [(ngModel)]="Nota[i]"></th>
+</table>
+<button (click)="create()">Create</button>

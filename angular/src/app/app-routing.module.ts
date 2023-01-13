@@ -7,6 +7,7 @@ import { TestetNxansComponent } from './testet-nxans/testet-nxans.component';
 import { TeacherClassComponent } from './teacher-class/teacher-class.component';
 import { TeacherTestComponent } from './teacher-test/teacher-test.component';
 import { TestInfoUpdateComponent } from './test-info-update/test-info-update.component';
+import { CreateTestInfoComponent } from './create-test-info/create-test-info.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -16,7 +17,8 @@ const routes: Routes = [
   {path:"test", component:TestetNxansComponent},
   {path:"klasat", component:TeacherClassComponent},
   {path:"profatTest", component:TeacherTestComponent},
-  {path:"updateTest", component:TestInfoUpdateComponent}
+  {path:"updateTest", component:TestInfoUpdateComponent},
+  {path:"createTest", component:CreateTestInfoComponent}
 ];
 
 @NgModule({

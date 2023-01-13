@@ -114,4 +114,44 @@ const updateTest = (req, res) => {
     }
 }
 
-module.exports = { getTestByUserId, getTestTeacher, updateTest }
+const createUser = (req, res) => {
+    let name = req.body.name
+    let periudha = +req.body.periudha
+    let Class_id = +req.body.Class_id
+    let User_id = req.body.User_id
+
+    if (name == "" && !name) {
+        error.push("Emri nuk munde te jete i zbrazet")
+    }
+    if (periudha == 0 && !periudha) {
+        error.push("Periudha nuk duhet te jet ee zbrazet")
+    }
+    if (Class_id == 0 && !Class_id) {
+        error.push("Klasa nuk duhet te jet ee zbrazet")
+    }
+    if (User_id == 0 && !User_id) {
+        error.push("User_id nuk duhet te jet ee zbrazet")
+    }
+
+
+    models.ClassTeacherInfo.findOne({
+        where: { Class_id: Class_id, Teacher_id: User_id }
+    }).then((data) => {
+        console.log(data.Subject_id);
+        models.Test.create({ Name: name, Periudha: periudha, Subject: data.Subject_id, Class_id: Class_id, User_id: User_id }).then((resp) => {
+            res.json({ resp: resp, succes: "Succes" })
+        }).catch((err) => {
+            res.json({ error: err })
+        })
+    })
+}
+
+const deleteUser = (req, res) => {
+    let id = req.params.id
+    console.log(id);
+    models.Test.destroy({ where: { id: id } }).then(() => {
+        res.json({ sucess: "Sucess" })
+    })
+}
+
+module.exports = { getTestByUserId, getTestTeacher, updateTest, createUser, deleteUser }

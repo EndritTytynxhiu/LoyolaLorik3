@@ -15,4 +15,8 @@ export class TestInfoService {
   updateTestInfo(body:any){
     return this.http.put(("http://localhost:4000/api/testInfo/"), body)
   }
+
+  createTestInfo(body:any){
+    return this.http.post(("http://localhost:4000/api/testInfo/create"), body)
+  }
 }

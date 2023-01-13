@@ -21,6 +21,7 @@ import { MatCommonModule } from '@angular/material/core';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { UpdateDialogComponentComponent } from './update-dialog-component/update-dialog-component.component';
 import { UpdateTestDialogComponent } from './update-test-dialog/update-test-dialog.component';
+import { CreateTestInfoComponent } from './create-test-info/create-test-info.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { UpdateTestDialogComponent } from './update-test-dialog/update-test-dial
     TestInfoUpdateComponent,
     UpdateDialogComponentComponent,
     UpdateTestDialogComponent,
+    CreateTestInfoComponent,
   ],
   imports: [
     BrowserModule,

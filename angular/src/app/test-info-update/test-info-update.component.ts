@@ -53,8 +53,8 @@ export class TestInfoUpdateComponent implements OnInit {
         console.log(data);
         console.log(this.datat);
         
-        if (this.datat.error == 'Nota nuk ekziston') {
-          alert(this.datat.error)
+        if (this.datat == 'Nota nuk ekziston') {
+          alert(this.datat)
         }
         if (this.datat.succes){
           console.log('test');

@@ -17,6 +17,13 @@ export class TestService {
   }
   updateTest(body:any){
     return this.http.put("http://localhost:4000/api/test/", body)
+  }
 
+  createTest(body:any){
+    return this.http.post("http://localhost:4000/api/test/create", body)
+  }
+
+  deleteTest(id:any){
+    return this.http.delete(`http://localhost:4000/api/test/${id}`)
   }
 }
