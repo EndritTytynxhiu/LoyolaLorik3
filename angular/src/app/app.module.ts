@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './service/user.service';
 import { LandetComponent } from './landet/landet.component';
@@ -22,6 +22,8 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { UpdateDialogComponentComponent } from './update-dialog-component/update-dialog-component.component';
 import { UpdateTestDialogComponent } from './update-test-dialog/update-test-dialog.component';
 import { CreateTestInfoComponent } from './create-test-info/create-test-info.component';
+import { CommonModule } from '@angular/common';
+import {MatInputModule} from '@angular/material/input'
 
 @NgModule({
   declarations: [
@@ -44,7 +46,11 @@ import { CreateTestInfoComponent } from './create-test-info/create-test-info.com
     HttpClientModule,
     BrowserAnimationsModule,
     MatCommonModule,
-    MatDialogModule
+    MatDialogModule,
+    ReactiveFormsModule,
+    FormsModule,
+    CommonModule,
+    MatInputModule
   ],
   providers: [UserService, TestService, ClassService, TestInfoService, ],
   bootstrap: [AppComponent]

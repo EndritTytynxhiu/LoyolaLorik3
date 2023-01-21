@@ -9,11 +9,13 @@
     <form>
         <h3>Kycja</h3>
 
-        <label for="username">Nxenesi ID</label>
-        <input type="text" placeholder="Email or Phone" id="username" [(ngModel)]="email" [ngModelOptions]="{standalone: true}">
-
+        <label for="username">Email</label>
+        <input matInput type="text" placeholder="pat@example.com" id="username" [(ngModel)]="email" [ngModelOptions]="{standalone: true} " [ngClass]="data?.error[0] == 'Email' || data?.error[1] == 'Email' ? 'red' : ''">
+        <mat-error *ngIf="data?.error[0] == 'Email' || data?.error[1] == 'Email'">Emaili nuk eshte i sakte</mat-error>
         <label for=" password ">Fjalekalimin</label>
-        <input type="text " placeholder="Password " id="password " [(ngModel)]="password" [ngModelOptions]="{standalone: true} ">
+        <input type="text " placeholder="Password " id="password " [(ngModel)]="password" [ngModelOptions]="{standalone: true} " [(ngModel)]="password" [ngClass]="data?.error[0] == 'Password' || data?.error[1] == 'Password' || data?.error == 'Password'  ? 'red' : ''">
+        <mat-error *ngIf="data?.error[0] == 'Password' || data?.error[1] == 'Password' || data?.error == 'Password'  ">Passwordi nuk eshte i sakte</mat-error>
+
 
         <button class="button" (click)=" Login() ">Kycuni</button>
         <button class="button" (click)="Signup()">Regjistrohuni</button>

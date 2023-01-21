@@ -8,6 +8,8 @@ import { TeacherClassComponent } from './teacher-class/teacher-class.component';
 import { TeacherTestComponent } from './teacher-test/teacher-test.component';
 import { TestInfoUpdateComponent } from './test-info-update/test-info-update.component';
 import { CreateTestInfoComponent } from './create-test-info/create-test-info.component';
+import { MatCommonModule } from '@angular/material/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -22,7 +24,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes), MatCommonModule],
+  exports: [RouterModule ]
 })
 export class AppRoutingModule { }

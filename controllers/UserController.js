@@ -6,22 +6,49 @@ const e = require('express');
 const login = (req, res) => {
     let email = req.body.email;
     let password = req.body.password;
+    let err = []
+    if (email == "" && !email) {
+        err.push("Email")
+    }
+    if (password == "" && !password) {
+        err.push("Password")
+    }
+    if (password.length < 8) {
+        err.push("Password")
+    }
+    models.User.findOne({ where: { email: email } }).then((result) => {
+        console.log(result);
+        if (result == null) {
+            console.log(result);
+            console.log("mrena ifit");
+            err.push("Email")
+            console.log(err);
+        }
+        if (err.length < 1) {
+            models.User.findOne({
+                where: { email: email, password: password },
+                attributes: { include: ['password'] }
+            }).then(result => {
+                if (result) {
+                    const token = jwt.sign({ result }, 'SecretKey', { expiresIn: '24h' })
+                    res.json({ succes: "Succesfull", token: token, data: result })
+                } else {
+                    res.json({ error: "Password" })
+                }
+            }).catch(err => {
+                console.log(err)
+                res.json(err, 501)
+            })
 
-    models.User.findOne({
-            where: { email: email, password: password },
-            attributes: { include: ['password'] }
-        })
-        .then(result => {
-            if (result) {
-                const token = jwt.sign({ result }, 'SecretKey', { expiresIn: '24h' })
-                res.json({ succes: "Succesfull", token: token, data: result })
-            } else {
-                res.json({ error: "Passwordi ose Emaili i gabuar" })
-            }
-        }).catch(err => {
-            console.log(err)
-            res.json(err, 501)
-        })
+        } else {
+            console.log(err);
+            res.json({ error: err, succes: "Failed" })
+            return
+        }
+    })
+
+
+
 }
 
 const signup = (req, res) => {
@@ -37,26 +64,26 @@ const signup = (req, res) => {
     let err = []
 
     if (FirstName == "" && !FirstName) {
-        err.push("Emri nuk munde te jete i zbraset")
+        err.push("FirstName")
     }
     if (LastName == "" && !LastName) {
-        err.push("Mbiemri nuk munde te jete i zbraset")
+        err.push("LastName")
     }
     if (Email == "" && !Email) {
-        err.push("Emaili nuk munde te jete i zbrazet")
+        err.push("Email")
     }
     if (password == "" && !password) {
-        err.push("Fjalekalimi nuk munde te jet ei zbrazet")
+        err.push("Password")
     }
     if (Student_password == "" && !Student_password) {
-        err.push("Fjalekalimi nuk munde te jet ei zbrazet")
+        err.push("Student_password")
     }
     if (Student_id == "" && !Student_id) {
-        err.push("Fjalekalimi nuk munde te jet ei zbrazet")
+        err.push("Student_id")
     }
 
     if (password.length < 8) {
-        err.push("Passwordi suhet te jete se paku 8 karaktera")
+        err.push("Password")
     }
 
     if (err.length >= 1) {
@@ -67,7 +94,7 @@ const signup = (req, res) => {
             where: { email: Email }
         }).then(user => {
             if (user) {
-                res.json({ error: "Emaili eshte i regjistruar", succes: "Failed" })
+                res.json({ error: "Email", succes: "Failed" })
             } else {
                 models.Student.findOne({
                     where: { id: Student_id, Password: Student_password }
