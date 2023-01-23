@@ -66,6 +66,8 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['lendet']);
         }if(this.data.data.Role_id == 2){
           this.router.navigate(['klasat']);
+        }if(this.data.data.Role_id == 3){
+          this.router.navigate(['administratamain']);
         }
       } else {
         alert(this.data.error)

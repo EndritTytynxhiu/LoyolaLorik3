@@ -17,13 +17,18 @@ import { TeacherTestComponent } from './teacher-test/teacher-test.component';
 import { TestInfoService } from './service/test-info.service';
 import { TestInfoUpdateComponent } from './test-info-update/test-info-update.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatCommonModule } from '@angular/material/core';
+import { MatCommonModule, MatNativeDateModule } from '@angular/material/core';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { UpdateDialogComponentComponent } from './update-dialog-component/update-dialog-component.component';
 import { UpdateTestDialogComponent } from './update-test-dialog/update-test-dialog.component';
 import { CreateTestInfoComponent } from './create-test-info/create-test-info.component';
 import { CommonModule } from '@angular/common';
-import {MatInputModule} from '@angular/material/input'
+import {MatInputModule } from '@angular/material/input';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { AdministrataMainComponent } from './administrata-main/administrata-main.component';
+import { InsertStudentsComponent } from './insert-students/insert-students.component';
+import { InsertTeacherComponent } from './insert-teacher/insert-teacher.component';
+
 
 @NgModule({
   declarations: [
@@ -38,6 +43,9 @@ import {MatInputModule} from '@angular/material/input'
     UpdateDialogComponentComponent,
     UpdateTestDialogComponent,
     CreateTestInfoComponent,
+    AdministrataMainComponent,
+    InsertStudentsComponent,
+    InsertTeacherComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +58,9 @@ import {MatInputModule} from '@angular/material/input'
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
-    MatInputModule
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [UserService, TestService, ClassService, TestInfoService, ],
   bootstrap: [AppComponent]

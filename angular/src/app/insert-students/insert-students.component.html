@@ -1,0 +1,17 @@
+<mat-label>FirstName</mat-label>
+<input matInput [(ngModel)]="FirstName">
+<mat-label>LastName</mat-label>
+<input matInput [(ngModel)]="LastName">
+<mat-label>Choose a date</mat-label>
+<input matInput [matDatepicker]="picker" [(ngModel)]="BirthDate">
+<mat-hint>MM/DD/YYYY</mat-hint>
+<mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+<mat-datepicker #picker></mat-datepicker>
+<mat-label>Email</mat-label>
+<input matInput [(ngModel)]="Email">
+<mat-label>Phonenumber</mat-label>
+<input matInput [(ngModel)]="Phonenumber">
+<mat-label>Password</mat-label>
+<input matInput [(ngModel)]="Password">
+
+<button (click)="Insert()" Inserto></button>

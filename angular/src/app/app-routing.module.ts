@@ -10,6 +10,9 @@ import { TestInfoUpdateComponent } from './test-info-update/test-info-update.com
 import { CreateTestInfoComponent } from './create-test-info/create-test-info.component';
 import { MatCommonModule } from '@angular/material/core';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
+import { AdministrataMainComponent } from './administrata-main/administrata-main.component';
+import { InsertStudentsComponent } from './insert-students/insert-students.component';
+import { InsertTeacherComponent } from './insert-teacher/insert-teacher.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -20,7 +23,11 @@ const routes: Routes = [
   {path:"klasat", component:TeacherClassComponent},
   {path:"profatTest", component:TeacherTestComponent},
   {path:"updateTest", component:TestInfoUpdateComponent},
-  {path:"createTest", component:CreateTestInfoComponent}
+  {path:"createTest", component:CreateTestInfoComponent},
+  {path:"administratamain", component:AdministrataMainComponent},
+  {path:"addStudents", component:InsertStudentsComponent},
+  {path:"addTeacher", component:InsertTeacherComponent},
+
 ];
 
 @NgModule({

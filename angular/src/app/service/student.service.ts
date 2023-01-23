@@ -11,4 +11,8 @@ export class StudentService {
   getStudentClass(id:number){
     return this.http.get(`http://localhost:4000/api/student/${id}`)
   }
+
+  createStudent(body:any){
+    return this.http.post(`http://localhost:4000/api/student/`, body)
+  }
 }
