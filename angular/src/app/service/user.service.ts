@@ -21,4 +21,8 @@ export class UserService {
   teacher(body:any){
     return this.http.post("http://localhost:4000/api/users", body)
   }
+
+  getTeachers(){
+    return this.http.get("http://localhost:4000/api/users")
+  }
 }
