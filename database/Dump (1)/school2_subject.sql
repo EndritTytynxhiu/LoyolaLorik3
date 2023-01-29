@@ -16,36 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `test`
+-- Table structure for table `subject`
 --
 
-DROP TABLE IF EXISTS `test`;
+DROP TABLE IF EXISTS `subject`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `test` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(255) NOT NULL,
-  `Periudha` int NOT NULL,
-  `Subject` int NOT NULL,
-  `Class_id` int DEFAULT NULL,
-  `User_id` int DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `MFOI_idx` (`Subject`),
-  KEY `MF02_idx` (`Class_id`),
-  KEY `bdi_idx` (`User_id`),
-  CONSTRAINT `bdi` FOREIGN KEY (`User_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `MFOI` FOREIGN KEY (`Subject`) REFERENCES `subject` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `subject` (
+  `id` int NOT NULL,
+  `Name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `test`
+-- Dumping data for table `subject`
 --
 
-LOCK TABLES `test` WRITE;
-/*!40000 ALTER TABLE `test` DISABLE KEYS */;
-INSERT INTO `test` VALUES (1,'Flete pune',2,3,1,2),(2,'Testi i vogel',1,3,1,2),(3,'Testi i vogel ',1,9,1,4),(4,'Aktivitet',2,3,1,2),(5,'Aktivitet',2,3,1,2),(11,'Test Test',3,3,1,2),(25,'Test i madhe',2,3,1,2);
-/*!40000 ALTER TABLE `test` ENABLE KEYS */;
+LOCK TABLES `subject` WRITE;
+/*!40000 ALTER TABLE `subject` DISABLE KEYS */;
+INSERT INTO `subject` VALUES (1,'Gjuhe Shqipe'),(2,'Gjuhe gjermane'),(3,'Gjuhe angleze'),(4,'Gjuhe latine'),(5,'Matematike'),(6,'Fizik'),(7,'Kimi'),(8,'Biologji'),(9,'Ekonomi'),(10,'Gjeografi'),(11,'Art'),(12,'Muzik');
+/*!40000 ALTER TABLE `subject` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -57,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-14  0:11:54
+-- Dump completed on 2023-01-29 13:07:00

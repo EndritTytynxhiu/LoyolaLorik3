@@ -16,32 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `classinfo`
+-- Table structure for table `roles`
 --
 
-DROP TABLE IF EXISTS `classinfo`;
+DROP TABLE IF EXISTS `roles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `classinfo` (
-  `Id` int NOT NULL,
-  `Class_id` int NOT NULL,
-  `Students_id` int NOT NULL,
-  PRIMARY KEY (`Id`),
-  KEY `Class_id` (`Class_id`),
-  KEY `bioxb_idx` (`Students_id`),
-  CONSTRAINT `bioxb` FOREIGN KEY (`Students_id`) REFERENCES `students` (`id`),
-  CONSTRAINT `classinfo_ibfk_1` FOREIGN KEY (`Class_id`) REFERENCES `class` (`id`)
+CREATE TABLE `roles` (
+  `id` int NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `classinfo`
+-- Dumping data for table `roles`
 --
 
-LOCK TABLES `classinfo` WRITE;
-/*!40000 ALTER TABLE `classinfo` DISABLE KEYS */;
-INSERT INTO `classinfo` VALUES (1,1,1),(2,1,2),(3,1,3),(4,1,4),(5,2,1),(6,2,2),(7,2,3),(8,2,4),(9,3,1),(10,3,2),(11,3,3);
-/*!40000 ALTER TABLE `classinfo` ENABLE KEYS */;
+LOCK TABLES `roles` WRITE;
+/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
+INSERT INTO `roles` VALUES (1,'Parent'),(2,'Teacher'),(3,'Adminstrator');
+/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-14  0:11:55
+-- Dump completed on 2023-01-29 13:07:00

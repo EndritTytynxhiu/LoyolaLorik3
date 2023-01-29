@@ -16,26 +16,33 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `role`
+-- Table structure for table `test_info`
 --
 
-DROP TABLE IF EXISTS `role`;
+DROP TABLE IF EXISTS `test_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `role` (
+CREATE TABLE `test_info` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `Name` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `test_id` int NOT NULL,
+  `student_id` int NOT NULL,
+  `Nota` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `student_id` (`student_id`),
+  KEY `test_id` (`test_id`),
+  CONSTRAINT `test_info_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`),
+  CONSTRAINT `test_info_ibfk_2` FOREIGN KEY (`test_id`) REFERENCES `test` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `role`
+-- Dumping data for table `test_info`
 --
 
-LOCK TABLES `role` WRITE;
-/*!40000 ALTER TABLE `role` DISABLE KEYS */;
-/*!40000 ALTER TABLE `role` ENABLE KEYS */;
+LOCK TABLES `test_info` WRITE;
+/*!40000 ALTER TABLE `test_info` DISABLE KEYS */;
+INSERT INTO `test_info` VALUES (1,1,1,4),(2,1,2,5),(3,1,3,3),(4,1,4,5),(5,2,1,4),(6,2,2,3),(7,2,3,5),(8,2,4,5),(9,3,1,5),(10,3,2,3),(11,3,3,4),(12,3,4,5),(101,26,1,5),(102,26,2,3),(103,26,3,3),(104,26,4,2),(105,27,2,5),(106,27,4,5),(107,27,1,5),(108,27,3,5),(109,28,1,5),(110,28,2,5),(111,28,3,5),(112,28,4,5);
+/*!40000 ALTER TABLE `test_info` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -47,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-14  0:11:53
+-- Dump completed on 2023-01-29 13:07:00
