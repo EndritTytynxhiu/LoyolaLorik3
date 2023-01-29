@@ -10,14 +10,16 @@ const testRouters = require('./routers/test')
 const classRouters = require('./routers/class')
 const testInfoRouters = require("./routers/testinfo")
 const studentRouters = require("./routers/students")
-
+const ClassInfoRouters = require("./routers/classinfo")
+const ClassTeacherInfoRouters = require("./routers/classteacherinfo")
 
 app.use('/api/users', userRouters)
 app.use('/api/test', testRouters)
 app.use('/api/class', classRouters)
 app.use('/api/testInfo', testInfoRouters)
 app.use('/api/student', studentRouters)
-
+app.use('/api/classInfo', ClassInfoRouters)
+app.use('/api/classTeacherInfo', ClassTeacherInfoRouters)
 
 app.listen(4000, () => {
     console.log('listening on port 4000');

@@ -120,7 +120,59 @@ const signup = (req, res) => {
 
 }
 
+const createTeacher = (req, res) => {
+
+    let FirstName = req.body.FirstName
+    LastName = req.body.LastName
+    Email = req.body.Email
+    let password = req.body.Password
+    let err = []
+
+    if (FirstName == "" && !FirstName) {
+        err.push("FirstName")
+    }
+    if (LastName == "" && !LastName) {
+        err.push("LastName")
+    }
+    if (Email == "" && !Email) {
+        err.push("Email")
+    }
+    if (password == "" && !password) {
+        err.push("Password")
+    }
+    // if (password.length < 8) {
+    //     err.push("Password")
+    // }
+
+    if (err.length >= 1) {
+        res.json({ error: err, succes: "Failed" })
+    } else {
+
+        models.User.findOne({
+            where: { email: Email }
+        }).then(user => {
+            if (user) {
+                res.json({ error: "Email", succes: "Failed" })
+            } else {
+                models.User.create({ FirstName: FirstName, LastName: LastName, Email: Email, password: password, Role_id: 2 }).then((data) => {
+                    res.json({ data: data })
+                }).catch(error => {
+                    err.push(error)
+                    res.json({ error: err, succes: "Failed" })
+                })
+            }
+        })
+    }
+}
+
+const getTeachers = (req, res) => {
+    models.User.findAll({ where: { Role_id: 2 } }).then(data => {
+        res.json({ data: data })
+    }).catch(error => {
+        res.json({ error: error })
+    })
+}
 
 
 
-module.exports = { login, signup }
+module.exports = { login, signup, createTeacher, getTeachers }

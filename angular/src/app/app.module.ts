@@ -28,6 +28,9 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { AdministrataMainComponent } from './administrata-main/administrata-main.component';
 import { InsertStudentsComponent } from './insert-students/insert-students.component';
 import { InsertTeacherComponent } from './insert-teacher/insert-teacher.component';
+import { InsertStudentClassComponent } from './insert-student-class/insert-student-class.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { InsertTeacherToClassComponent } from './insert-teacher-to-class/insert-teacher-to-class.component';
 
 
 @NgModule({
@@ -46,6 +49,8 @@ import { InsertTeacherComponent } from './insert-teacher/insert-teacher.componen
     AdministrataMainComponent,
     InsertStudentsComponent,
     InsertTeacherComponent,
+    InsertStudentClassComponent,
+    InsertTeacherToClassComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,7 +65,8 @@ import { InsertTeacherComponent } from './insert-teacher/insert-teacher.componen
     CommonModule,
     MatInputModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    Ng2SearchPipeModule
   ],
   providers: [UserService, TestService, ClassService, TestInfoService, ],
   bootstrap: [AppComponent]

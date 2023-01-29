@@ -13,6 +13,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
 import { AdministrataMainComponent } from './administrata-main/administrata-main.component';
 import { InsertStudentsComponent } from './insert-students/insert-students.component';
 import { InsertTeacherComponent } from './insert-teacher/insert-teacher.component';
+import { InsertStudentClassComponent } from './insert-student-class/insert-student-class.component';
+import { InsertTeacherToClassComponent } from './insert-teacher-to-class/insert-teacher-to-class.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
@@ -27,7 +29,8 @@ const routes: Routes = [
   {path:"administratamain", component:AdministrataMainComponent},
   {path:"addStudents", component:InsertStudentsComponent},
   {path:"addTeacher", component:InsertTeacherComponent},
-
+  {path:"InsertStudnetToClass", component:InsertStudentClassComponent},
+  {path:"InsertTeacherToClass", component:InsertTeacherToClassComponent},
 ];
 
 @NgModule({

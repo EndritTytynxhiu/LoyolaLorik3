@@ -1,0 +1,13 @@
+<input type="text" [(ngModel)]="filterText">
+<table>
+    <tr *ngFor="let student of Nxenesit.data|filter:filterText; let i = index">
+        <td> {{i + 1}}id {{student.id}}</td>
+        <td> Emri {{student.FirstName}}</td>
+        <td> Mbiemri {{student.LastName}}</td>
+        <td (click)="submit(student)">Zgjedh</td>
+</table>
+<hr>
+<input type="text" [(ngModel)]="id">
+<input type="text" [(ngModel)]="class" placeholder="Klasa">
+<input type="text" [(ngModel)]="subject" placeholder="Landa">
+<button (click)="Insert()">Inserto</button>

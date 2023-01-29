@@ -7,15 +7,19 @@ const getTestByUserId = (req, res) => {
     let User_id = req.body.id
     let landa = req.body.landa
     let error = []
+    let viti = ""
     console.log(req.body);
 
-    if (User_id == 0 && !User_id) {
+    if (User_id == 0 || !User_id) {
         error.push("Nuk ka User_id")
     }
-    if (landa == "" && !landa) {
+    if (landa == "" || !landa) {
         error.push("Nuk ka lande")
     }
-
+    models.VitiShkollor.findOne({ where: { Id: 1 } }).then(data => {
+        // res.json({ data: data })
+        viti = data.VitiShkollor
+    })
     if (error.length >= 1) {
         res.json({ error: error })
     } else {
@@ -27,7 +31,7 @@ const getTestByUserId = (req, res) => {
                     where: { Name: landa }
                 }).then(result2 => {
                     if (result2) {
-                        sequelize.query(`Select test.Name, test.Periudha, test_info.Nota From users INNER JOIN students ON users.Student_id = students.id INNER JOIN test_info ON students.id = test_info.student_id INNER JOIN test ON test_info.test_id = test.id INNER JOIN subject ON test.Subject = subject.id WHERE subject.Name="${landa}" AND users.id = ${User_id}`).then(result3 => {
+                        sequelize.query(`Select test.Name, test.Periudha, test_info.Nota From users INNER JOIN students ON users.Student_id = students.id INNER JOIN test_info ON students.id = test_info.student_id INNER JOIN test ON test_info.test_id = test.id INNER JOIN subject ON test.Subject = subject.id WHERE subject.Name="${landa}" AND users.id = ${User_id} AND test.Vitishkollor="${viti}"`).then(result3 => {
                             res.json({ data: result3[0] })
                         })
                     } else {
@@ -45,6 +49,7 @@ const getTestTeacher = (req, res) => {
     let User_id = req.body.id
     let Class_id = req.body.Class_id
     let error = []
+    let viti = ""
     console.log(req.body);
 
     if (User_id == 0 && !User_id) {
@@ -53,6 +58,10 @@ const getTestTeacher = (req, res) => {
     if (Class_id == "" && !Class_id) {
         error.push("Nuk ka klase")
     }
+    models.VitiShkollor.findOne({ where: { Id: 1 } }).then(data => {
+        // res.json({ data: data })
+        viti = data.VitiShkollor
+    })
 
     if (error.length >= 1) {
         res.json({ error: error })
@@ -66,7 +75,7 @@ const getTestTeacher = (req, res) => {
                 }).then(result2 => {
                     if (result2) {
                         models.Test.findAll({
-                            where: { User_id: User_id, Class_id: Class_id }
+                            where: { User_id: User_id, Class_id: Class_id, VitiShkollor: viti }
                         }).then((data) => {
                             console.log(data);
                             res.json({ data: data })
@@ -119,7 +128,12 @@ const createUser = (req, res) => {
     let periudha = +req.body.periudha
     let Class_id = +req.body.Class_id
     let User_id = req.body.User_id
+    let viti = ""
 
+    models.VitiShkollor.findOne({ where: { Id: 1 } }).then(data => {
+        // res.json({ data: data })
+        viti = data.VitiShkollor
+    })
     if (name == "" && !name) {
         error.push("Emri nuk munde te jete i zbrazet")
     }
@@ -138,7 +152,7 @@ const createUser = (req, res) => {
         where: { Class_id: Class_id, Teacher_id: User_id }
     }).then((data) => {
         console.log(data.Subject_id);
-        models.Test.create({ Name: name, Periudha: periudha, Subject: data.Subject_id, Class_id: Class_id, User_id: User_id }).then((resp) => {
+        models.Test.create({ Name: name, Periudha: periudha, Subject: data.Subject_id, Class_id: Class_id, User_id: User_id, Vititshkollor: viti }).then((resp) => {
             res.json({ resp: resp, succes: "Succes" })
         }).catch((err) => {
             res.json({ error: err })

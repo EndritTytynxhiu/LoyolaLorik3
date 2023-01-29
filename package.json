@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/EndritTytynxhiu/shkolla#readme",
   "dependencies": {
+    "@angular/core": "^15.1.1",
     "angular": "^1.8.3",
     "cors": "^2.8.5",
     "env": "^0.0.2",
@@ -27,6 +28,7 @@
     "md5": "^2.3.0",
     "mysql": "^2.18.1",
     "mysql2": "^2.3.3",
+    "ng2-search-filter": "^0.5.1",
     "nodemon": "^2.0.20",
     "path": "^0.12.7",
     "semver": "^7.3.8",
