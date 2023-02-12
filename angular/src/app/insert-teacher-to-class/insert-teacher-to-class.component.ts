@@ -2,6 +2,7 @@ import { Component, ɵflushModuleScopingQueueAsMuchAsPossible } from '@angular/c
 import { UserService } from '../service/user.service';
 import { ClassInfoService } from '../service/class-info.service';
 import { Router } from '@angular/router';
+import { ClassTeacherInfoService } from '../service/class-teacher-info.service';
 
 @Component({
   selector: 'app-insert-teacher-to-class',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./insert-teacher-to-class.component.css']
 })
 export class InsertTeacherToClassComponent {
-  constructor(private user:UserService, private classInfo:ClassInfoService, private router:Router){}
+  constructor(private user:UserService, private classInfo:ClassTeacherInfoService, private router:Router){}
   Nxenesit:any
   filterText: string = ""
   id:string=""
@@ -30,13 +31,13 @@ export class InsertTeacherToClassComponent {
   }
 
   Insert(){
-    this.classInfo.InsertStudent({Student_id:this.id, Class:this.class,Subject_name:this.subject }).pipe().subscribe((data)=>{
+    this.classInfo.InsertTeacher({Teacher_id:this.id, Class:this.class,Subject_name:this.subject }).pipe().subscribe((data)=>{
       console.log(data);
       this.Data = data
       if (this.Data.succes == "Succes") {
         this.router.navigate(['administratamain'])
       }else{
-        alert("Nxenesi nuk u insertua")
+        alert("Arsimtari nuk u insertua")
       }
     })
   }

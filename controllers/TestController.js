@@ -152,7 +152,7 @@ const createUser = (req, res) => {
         where: { Class_id: Class_id, Teacher_id: User_id }
     }).then((data) => {
         console.log(data.Subject_id);
-        models.Test.create({ Name: name, Periudha: periudha, Subject: data.Subject_id, Class_id: Class_id, User_id: User_id, Vititshkollor: viti }).then((resp) => {
+        models.Test.create({ Name: name, Periudha: periudha, Subject: data.Subject_id, Class_id: Class_id, User_id: User_id, Vitishkollor: viti }).then((resp) => {
             res.json({ resp: resp, succes: "Succes" })
         }).catch((err) => {
             res.json({ error: err })

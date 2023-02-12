@@ -30,6 +30,10 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false
         },
+        Vitishkollor: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        }
     }, {
         tableName: 'test',
         timestamps: false,

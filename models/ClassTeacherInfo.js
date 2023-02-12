@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
         Subject_id: {
             type: DataTypes.INTEGER,
             allowNull: false
+        },
+        VitiShkollor: {
+            type: DataTypes.INTEGER,
+            allowNull: false
         }
     }, {
         tableName: 'classteacherinfo',

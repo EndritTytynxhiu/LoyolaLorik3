@@ -19,7 +19,11 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             allowNull: false,
             foreignKey: true
-        }
+        },
+        Vititshkollor: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
     }, {
         tableName: 'classinfo',
         timestamps: false,

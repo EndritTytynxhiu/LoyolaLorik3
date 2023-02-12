@@ -28,7 +28,9 @@ const InsertTeacherToClasses = (req, res) => {
         models.Subject.findOne({ where: { Name: Subject_name } }).then(data2 => {
             if (data2) {
                 models.Class.findOne({ where: { Name: Class_name } }).then(data => {
+                    console.log(data);
                     if (data) {
+                        console.log("test");
                         models.ClassTeacherInfo.create({ Class_id: data.id, Teacher_id: Teacher_id, Subject_id: data2.id, VitiShkollor: viti }).then((resp => {
                             console.log(resp);
                             res.json({ succes: "Succes", data: resp })
@@ -38,12 +40,19 @@ const InsertTeacherToClasses = (req, res) => {
                     } else {
                         error.push("Class")
                     }
+                }).catch(err => {
+                    error.push(err)
                 })
             } else {
                 error.push("Subject")
             }
         })
     }
+    if (error.length >= 1) {
+        res.json({ error: error })
+    }
 }
+
+
 
 module.exports = { InsertTeacherToClasses }
