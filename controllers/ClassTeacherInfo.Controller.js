@@ -32,6 +32,7 @@ const InsertTeacherToClasses = (req, res) => {
                     if (data) {
                         console.log("test");
                         models.ClassTeacherInfo.create({ Class_id: data.id, Teacher_id: Teacher_id, Subject_id: data2.id, VitiShkollor: viti }).then((resp => {
+                            console.log(test);
                             console.log(resp);
                             res.json({ succes: "Succes", data: resp })
                         })).catch(err => {

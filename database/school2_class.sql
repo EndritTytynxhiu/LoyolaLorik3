@@ -16,37 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `test`
+-- Table structure for table `class`
 --
 
-DROP TABLE IF EXISTS `test`;
+DROP TABLE IF EXISTS `class`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `test` (
-  `id` int NOT NULL AUTO_INCREMENT,
+CREATE TABLE `class` (
+  `id` int NOT NULL,
   `Name` varchar(255) NOT NULL,
-  `Periudha` int NOT NULL,
-  `Subject` int NOT NULL,
-  `Class_id` int DEFAULT NULL,
-  `User_id` int DEFAULT NULL,
-  `Vitishkollor` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `MFOI_idx` (`Subject`),
-  KEY `MF02_idx` (`Class_id`),
-  KEY `bdi_idx` (`User_id`),
-  CONSTRAINT `bdi` FOREIGN KEY (`User_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `MFOI` FOREIGN KEY (`Subject`) REFERENCES `subject` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `test`
+-- Dumping data for table `class`
 --
 
-LOCK TABLES `test` WRITE;
-/*!40000 ALTER TABLE `test` DISABLE KEYS */;
-INSERT INTO `test` VALUES (1,'Flete pune',2,3,1,2,'2021-2022'),(2,'Testi i vogel',1,3,1,2,'2021-2022'),(3,'Testi i vogel ',1,9,1,4,'2021-2022'),(4,'Aktivitet',2,3,1,2,'2021-2022'),(5,'Aktivitet',2,3,1,2,'2021-2022'),(26,'Testi i madhe',2,3,1,2,'2021-2022'),(27,'Test i madhe',3,3,1,2,'2021-2022'),(28,'Aktivitet',2,3,1,2,'2021-2022');
-/*!40000 ALTER TABLE `test` ENABLE KEYS */;
+LOCK TABLES `class` WRITE;
+/*!40000 ALTER TABLE `class` DISABLE KEYS */;
+INSERT INTO `class` VALUES (1,'6A'),(2,'6B'),(3,'6C'),(4,'6D'),(5,'7A'),(6,'7B'),(7,'7C'),(8,'7D'),(9,'8A'),(10,'8B'),(11,'8C'),(12,'8D'),(13,'9A'),(14,'9B'),(15,'9C'),(16,'9D'),(17,'10A'),(18,'10B'),(19,'10C'),(20,'10D'),(21,'11A'),(22,'11B'),(23,'11C'),(24,'11D'),(25,'12A'),(26,'12B'),(27,'12C'),(28,'12D');
+/*!40000 ALTER TABLE `class` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -58,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-29 13:07:00
+-- Dump completed on 2023-02-13 23:30:44

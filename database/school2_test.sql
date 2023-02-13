@@ -36,7 +36,7 @@ CREATE TABLE `test` (
   KEY `bdi_idx` (`User_id`),
   CONSTRAINT `bdi` FOREIGN KEY (`User_id`) REFERENCES `users` (`id`),
   CONSTRAINT `MFOI` FOREIGN KEY (`Subject`) REFERENCES `subject` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +45,7 @@ CREATE TABLE `test` (
 
 LOCK TABLES `test` WRITE;
 /*!40000 ALTER TABLE `test` DISABLE KEYS */;
-INSERT INTO `test` VALUES (1,'Flete pune',2,3,1,2,'2021-2022'),(2,'Testi i vogel',1,3,1,2,'2021-2022'),(3,'Testi i vogel ',1,9,1,4,'2021-2022'),(4,'Aktivitet',2,3,1,2,'2021-2022'),(5,'Aktivitet',2,3,1,2,'2021-2022'),(26,'Testi i madhe',2,3,1,2,'2021-2022'),(27,'Test i madhe',3,3,1,2,'2021-2022'),(28,'Aktivitet',2,3,1,2,'2021-2022');
+INSERT INTO `test` VALUES (1,'Flete pune',2,3,1,2,'2021-2022'),(2,'Testi i vogel',1,3,1,2,'2021-2022'),(3,'Testi i vogel ',1,9,1,4,'2021-2022'),(4,'Aktivitet',2,3,1,2,'2021-2022'),(5,'Aktivitet',2,3,1,2,'2021-2022'),(27,'Test i madhe',3,3,1,2,'2021-2022'),(28,'Aktivitet',2,3,1,2,'2021-2022'),(29,'Flete pune',4,3,1,2,NULL),(30,'Test i vogel',2,9,5,2,NULL),(31,'Test i vogel',3,9,5,2,NULL),(32,'Test i vogel',2,9,5,2,NULL),(33,'Test i vogel',2,9,5,2,'2022-2023');
 /*!40000 ALTER TABLE `test` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -58,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-29 13:06:28
+-- Dump completed on 2023-02-13 23:30:43

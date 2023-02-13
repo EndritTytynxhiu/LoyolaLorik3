@@ -16,27 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `roles`
+-- Table structure for table `vitishkollor`
 --
 
-DROP TABLE IF EXISTS `roles`;
+DROP TABLE IF EXISTS `vitishkollor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `roles` (
-  `id` int NOT NULL,
-  `Name` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE `vitishkollor` (
+  `Id` int NOT NULL,
+  `VitiShkollor` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `roles`
+-- Dumping data for table `vitishkollor`
 --
 
-LOCK TABLES `roles` WRITE;
-/*!40000 ALTER TABLE `roles` DISABLE KEYS */;
-INSERT INTO `roles` VALUES (1,'Parent'),(2,'Teacher'),(3,'Adminstrator');
-/*!40000 ALTER TABLE `roles` ENABLE KEYS */;
+LOCK TABLES `vitishkollor` WRITE;
+/*!40000 ALTER TABLE `vitishkollor` DISABLE KEYS */;
+INSERT INTO `vitishkollor` VALUES (1,'2022-2023');
+/*!40000 ALTER TABLE `vitishkollor` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-29 13:06:28
+-- Dump completed on 2023-02-13 23:30:43

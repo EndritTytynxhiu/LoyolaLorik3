@@ -16,28 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `testinfo`
+-- Table structure for table `classteacherinfo`
 --
 
-DROP TABLE IF EXISTS `testinfo`;
+DROP TABLE IF EXISTS `classteacherinfo`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `testinfo` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `test_id` int NOT NULL,
-  `student_id` int DEFAULT NULL,
-  `Nota` int DEFAULT NULL,
-  PRIMARY KEY (`id`)
+CREATE TABLE `classteacherinfo` (
+  `Class_id` int NOT NULL,
+  `Teacher_id` int NOT NULL,
+  `Subject_id` int NOT NULL,
+  `Vitishkollor` varchar(255) DEFAULT NULL,
+  KEY `Class_id` (`Class_id`),
+  KEY `classteacherinfo_ibfk_2_idx` (`Subject_id`),
+  KEY `bnck_idx` (`Teacher_id`),
+  CONSTRAINT `bnck` FOREIGN KEY (`Teacher_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `classteacherinfo_ibfk_1` FOREIGN KEY (`Class_id`) REFERENCES `class` (`id`),
+  CONSTRAINT `kv` FOREIGN KEY (`Subject_id`) REFERENCES `subject` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `testinfo`
+-- Dumping data for table `classteacherinfo`
 --
 
-LOCK TABLES `testinfo` WRITE;
-/*!40000 ALTER TABLE `testinfo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `testinfo` ENABLE KEYS */;
+LOCK TABLES `classteacherinfo` WRITE;
+/*!40000 ALTER TABLE `classteacherinfo` DISABLE KEYS */;
+INSERT INTO `classteacherinfo` VALUES (1,2,3,'2021-2022'),(2,4,9,'2021-2022'),(1,4,9,'2021-2022'),(3,4,9,'2021-2022'),(2,2,3,'2021-2022'),(3,2,3,'2021-2022'),(1,5,10,'2021-2022'),(2,5,10,'2021-2022'),(3,5,10,'2021-2022'),(1,2,7,'2021-2022'),(1,2,7,'2021-2022'),(1,2,7,NULL),(1,2,7,NULL),(1,2,7,NULL),(1,2,7,NULL),(5,2,9,NULL),(5,2,9,NULL),(5,2,9,'2022-2023'),(5,2,9,'2022-2023'),(5,5,10,'2022-2023');
+/*!40000 ALTER TABLE `classteacherinfo` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-29 13:06:28
+-- Dump completed on 2023-02-13 23:30:43

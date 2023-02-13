@@ -32,7 +32,7 @@ CREATE TABLE `test_info` (
   KEY `test_id` (`test_id`),
   CONSTRAINT `test_info_ibfk_1` FOREIGN KEY (`student_id`) REFERENCES `students` (`id`),
   CONSTRAINT `test_info_ibfk_2` FOREIGN KEY (`test_id`) REFERENCES `test` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=152 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,7 +41,7 @@ CREATE TABLE `test_info` (
 
 LOCK TABLES `test_info` WRITE;
 /*!40000 ALTER TABLE `test_info` DISABLE KEYS */;
-INSERT INTO `test_info` VALUES (1,1,1,4),(2,1,2,5),(3,1,3,3),(4,1,4,5),(5,2,1,4),(6,2,2,3),(7,2,3,5),(8,2,4,5),(9,3,1,5),(10,3,2,3),(11,3,3,4),(12,3,4,5),(101,26,1,5),(102,26,2,3),(103,26,3,3),(104,26,4,2),(105,27,2,5),(106,27,4,5),(107,27,1,5),(108,27,3,5),(109,28,1,5),(110,28,2,5),(111,28,3,5),(112,28,4,5);
+INSERT INTO `test_info` VALUES (1,1,1,4),(2,1,2,5),(3,1,3,3),(4,1,4,5),(5,2,1,4),(6,2,2,3),(7,2,3,5),(8,2,4,5),(9,3,1,5),(10,3,2,3),(11,3,3,4),(12,3,4,5),(105,27,2,5),(106,27,4,4),(107,27,1,5),(108,27,3,5),(109,28,1,5),(110,28,2,5),(111,28,3,5),(112,28,4,5),(113,29,1,5),(114,29,2,5),(115,29,4,5),(116,29,3,5),(117,29,5,5),(118,29,5,5),(119,29,5,5),(120,29,8,5),(121,29,7,4),(122,29,6,3),(123,29,6,2),(124,30,1,5),(125,30,4,5),(126,30,3,5),(127,30,2,5),(128,30,7,5),(129,30,6,5),(130,30,6,5),(131,31,1,5),(132,31,2,5),(133,31,3,5),(134,31,4,5),(135,31,7,5),(136,31,6,5),(137,31,6,5),(138,32,2,5),(139,32,3,5),(140,32,1,5),(141,32,4,5),(142,32,7,5),(143,32,6,5),(144,32,6,5),(145,33,1,5),(146,33,3,5),(147,33,4,5),(148,33,2,5),(149,33,7,5),(150,33,6,5),(151,33,6,5);
 /*!40000 ALTER TABLE `test_info` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-01-29 13:06:27
+-- Dump completed on 2023-02-13 23:30:44
